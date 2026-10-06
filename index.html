@@ -1,38 +1,160 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BoostZone.gg</title><style>
-:root{--bg:#070911;--p:#101625;--l:#273149;--t:#fff;--m:#9aa4b8;--a:#7c5cff;--a2:#5e42e8;--bad:#ff6078}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;background:radial-gradient(circle at 50% -15%,#352174,transparent 38%),var(--bg);color:var(--t)}button,a,input{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}.hidden{display:none!important}.wrap{max-width:1150px;margin:auto;padding:0 20px}header{position:sticky;top:0;z-index:10;background:#070911eF;border-bottom:1px solid var(--l);backdrop-filter:blur(12px)}nav{height:70px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:24px;font-weight:900}.logo span{color:var(--a)}.links{display:flex;gap:25px;color:var(--m)}.right{display:flex;gap:8px}.btn{border:0;border-radius:9px;padding:11px 17px;font-weight:bold}.primary{background:linear-gradient(135deg,var(--a),var(--a2));color:white}.secondary{background:#151c2b;color:white;border:1px solid var(--l)}.danger{background:#421725;color:#ff9aaa;border:1px solid #733044}.hero{text-align:center;padding:105px 20px 80px}.hero h1{font-size:clamp(48px,8vw,86px);line-height:.95;margin:15px 0}.grad{background:linear-gradient(90deg,#ac8dff,#64a5ff);color:transparent;background-clip:text}.hero p{max-width:650px;margin:25px auto;color:var(--m);font-size:18px;line-height:1.6}.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.pill{display:inline-block;color:#bcaaff;border:1px solid #7c5cff55;background:#7c5cff18;border-radius:99px;padding:8px 13px;font-size:12px;font-weight:bold}section{padding:65px 0}.title{text-align:center;margin-bottom:35px}.title h2{font-size:38px;margin:0 0 8px}.title p{color:var(--m)}.games,.products,.features{display:grid;gap:18px}.games{grid-template-columns:1fr 1fr}.game,.product,.feature,.box{background:var(--p);border:1px solid var(--l);border-radius:16px}.game{padding:28px;min-height:190px}.game h3{font-size:29px;margin:0 0 10px}.game p,.product p,.feature p{color:var(--m);line-height:1.55}.game .btn{margin-top:18px}.products{grid-template-columns:repeat(3,1fr)}.product{padding:22px}.tag{font-size:11px;color:#b9a8ff;font-weight:bold}.product h3{margin:10px 0 7px}.product p{min-height:72px}.price{font-size:24px;font-weight:900;margin:17px 0}.product .btn{width:100%}.features{grid-template-columns:repeat(3,1fr)}.feature{padding:23px}.feature b{display:block;margin:10px 0 6px}footer{border-top:1px solid var(--l);padding:30px 0;color:var(--m);font-size:13px}.foot{display:flex;justify-content:space-between}.modal,.drawer{display:none;position:fixed;inset:0;background:#000b;z-index:50}.modal.show,.drawer.show{display:flex}.modal{align-items:center;justify-content:center;padding:20px}.box{width:min(430px,100%);padding:26px;box-shadow:0 20px 70px #0008}.head{display:flex;justify-content:space-between;align-items:center}.close{background:none;border:0;color:#fff;font-size:25px}.field{margin:13px 0}.field label{display:block;color:#c8d0df;font-size:13px;margin-bottom:6px}.field input{width:100%;padding:12px;background:#080d17;color:white;border:1px solid #35405a;border-radius:8px}.msg{color:#ff9aaa;font-size:13px;min-height:18px}.switch{text-align:center;color:var(--m);font-size:13px;margin-top:13px}.link{border:0;background:none;color:#b9a5ff}.drawer{justify-content:flex-end}.drawerbox{height:100%;width:min(470px,100%);background:#0d1320;border-left:1px solid var(--l);padding:24px;overflow:auto}.cartitem{display:flex;justify-content:space-between;gap:10px;padding:15px 0;border-bottom:1px solid var(--l)}.small{color:var(--m);font-size:13px}.total{display:flex;justify-content:space-between;font-size:22px;font-weight:900;margin:22px 0}.empty{text-align:center;color:var(--m);padding:45px 0}.toast{display:none;position:fixed;right:18px;bottom:18px;z-index:100;background:#172238;border:1px solid #3c4d70;padding:14px 17px;border-radius:10px}.toast.show{display:block}.page{max-width:800px;margin:60px auto}.order{padding:17px;background:var(--p);border:1px solid var(--l);border-radius:12px;margin:10px 0}.orderhead{display:flex;justify-content:space-between}.status{font-size:11px;padding:5px 8px;border-radius:99px;background:#17283b;color:#b9c8df}@media(max-width:800px){.links{display:none}.products,.features,.games{grid-template-columns:1fr}.hero{padding-top:70px}.foot{flex-direction:column;gap:10px}}
-</style></head><body>
-<header><nav class="wrap"><a class="logo" href="#" onclick="home()">BoostZone<span>.gg</span></a><div class="links"><a href="#games">Games</a><a href="#angebote">Angebote</a><a href="#vorteile">Vorteile</a></div><div class="right"><button class="btn secondary" onclick="cartOpen()">🛒 <span id="count">0</span></button><button id="loginButton" class="btn secondary" onclick="auth('login')">Anmelden</button><button id="accountButton" class="btn primary hidden" onclick="account()">Konto</button></div></nav></header>
-<main id="shop"><section class="hero"><div class="wrap"><span class="pill">🎮 GAMING SERVICES & COACHING</span><h1>Level up.<br><span class="grad">Dein Game.</span></h1><p>Wähle dein Spiel, suche dir einen Service aus und gehe direkt zum Checkout.</p><div class="actions"><a class="btn primary" href="#angebote">Angebote ansehen</a><button class="btn secondary" onclick="auth('register')">Konto erstellen</button></div></div></section>
-<section id="games"><div class="wrap"><div class="title"><h2>Deine Games</h2><p>Wähle dein Spiel.</p></div><div class="games"><div class="game"><h3>🔺 Valorant</h3><p>Coaching und Gaming-Services für Valorant.</p><button class="btn primary" onclick="filter('Valorant')">Angebote</button></div><div class="game"><h3>🚗 Rocket League</h3><p>Coaching und Gaming-Services für Rocket League.</p><button class="btn primary" onclick="filter('Rocket League')">Angebote</button></div></div></div></section>
-<section id="angebote"><div class="wrap"><div class="title"><h2>Angebote</h2><p>Lege einen Service in den Warenkorb.</p></div><div class="actions" style="margin-bottom:25px"><button class="btn secondary" onclick="filter('Alle')">Alle</button><button class="btn secondary" onclick="filter('Valorant')">Valorant</button><button class="btn secondary" onclick="filter('Rocket League')">Rocket League</button></div><div id="products" class="products"></div></div></section>
-<section id="vorteile"><div class="wrap"><div class="title"><h2>Warum BoostZone?</h2><p>Einfacher Bestellablauf.</p></div><div class="features"><div class="feature">⚡<b>Schnell</b><p>Service auswählen und in den Warenkorb legen.</p></div><div class="feature">🔒<b>Account</b><p>Dein Demo-Konto und deine Bestellungen werden lokal gespeichert.</p></div><div class="feature">🧾<b>Bestellungen</b><p>Bestellungen findest du anschließend in deinem Konto.</p></div></div></div></section></main>
-<footer><div class="wrap foot"><span>© 2026 BoostZone.gg</span><span>Impressum · Datenschutz · AGB</span></div></footer>
-<div id="toast" class="toast"></div>
-<div id="authModal" class="modal"><div class="box"><div class="head"><h2 id="authTitle">Anmelden</h2><button class="close" onclick="closeM('authModal')">×</button></div><div id="authMsg" class="msg"></div><form onsubmit="submitAuth(event)"><div class="field"><label>E-Mail</label><input id="email" type="email" required></div><div class="field"><label>Passwort</label><input id="pass" type="password" minlength="6" required></div><button id="authSubmit" class="btn primary" style="width:100%">Anmelden</button></form><div class="switch"><span id="switchText">Noch kein Konto?</span> <button class="link" onclick="toggleAuth()">Registrieren</button></div></div></div>
-<div id="cartModal" class="drawer" onclick="if(event.target===this)closeM('cartModal')"><div class="drawerbox"><div class="head"><h2>Warenkorb</h2><button class="close" onclick="closeM('cartModal')">×</button></div><div id="cartItems"></div><div id="cartBottom"></div></div></div>
-<div id="checkout" class="hidden"><div class="wrap page"><div class="title"><h2>Checkout</h2><p>Überprüfe deine Bestellung.</p></div><div class="box"><div id="summary"></div><div class="total"><span>Gesamt</span><span id="total">0,00 €</span></div><div id="checkoutMsg" class="msg"></div><button class="btn primary" style="width:100%" onclick="finish()">Zahlung starten</button><button class="btn secondary" style="width:100%;margin-top:8px" onclick="home()">Zurück</button><p style="color:#7f8aa1;font-size:12px;line-height:1.5;margin-top:14px">Dies ist die GitHub-Pages-Version. Der Abschluss wird hier simuliert. Echte PayPal-Zahlungen benötigen ein Backend, damit geheime PayPal-Zugangsdaten nicht im Browser stehen.</p></div></div></div>
-<div id="account" class="hidden"><div class="wrap page"><div class="title"><h2>Mein Konto</h2><p id="accountEmail"></p></div><div class="actions" style="margin-bottom:25px"><button class="btn secondary" onclick="home()">Shop</button><button class="btn danger" onclick="logout()">Abmelden</button></div><h3>Meine Bestellungen</h3><div id="orders"></div></div></div>
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BoostZone.gg — Gaming Services</title>
+<meta name="description" content="BoostZone.gg Gaming Services für Valorant und Rocket League">
+<style>
+:root{--bg:#070a12;--panel:#101522;--panel2:#151b2b;--text:#f4f7ff;--muted:#9aa5bd;--line:#273047;--accent:#7c5cff;--accent2:#19d3ae;--danger:#ff5c7a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at 20% 0%,#182044 0,#070a12 40%);color:var(--text)}
+button,input,select{font:inherit}button{cursor:pointer}.wrap{max-width:1180px;margin:auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:20;background:rgba(7,10,18,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{font-weight:900;font-size:22px}.logo span{color:var(--accent)}.navlinks{display:flex;gap:18px;align-items:center}.navlinks a{color:var(--muted);text-decoration:none}.navlinks a:hover{color:#fff}
+.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:800;background:var(--accent);color:#fff}.btn.alt{background:var(--panel2);border:1px solid var(--line)}.btn.green{background:var(--accent2);color:#04130f}.btn.danger{background:var(--danger)}
+.hero{padding:82px 0 55px}.hero h1{font-size:clamp(42px,7vw,78px);line-height:.98;margin:0 0 20px}.gradient{background:linear-gradient(90deg,#fff,#9f8cff,#54e8ca);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:680px;color:var(--muted);font-size:18px;line-height:1.6}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+section{padding:45px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.section-head h2{margin:0;font-size:32px}.section-head p{color:var(--muted);margin:6px 0 0}
+.filters{display:flex;gap:10px;flex-wrap:wrap}.filter{padding:9px 13px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--muted)}.filter.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(180deg,rgba(21,27,43,.95),rgba(12,16,27,.95));border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 12px 40px rgba(0,0,0,.16)}.badge{display:inline-block;font-size:12px;padding:5px 8px;border-radius:999px;background:#211b48;color:#b9adff}.card h3{margin:14px 0 7px}.card p{color:var(--muted);min-height:48px}.price{font-size:25px;font-weight:900;margin:16px 0}.card-actions{display:flex;gap:8px}.card-actions .btn{flex:1}
+.panel{background:rgba(16,21,34,.9);border:1px solid var(--line);border-radius:20px;padding:22px;margin-top:18px}.hidden{display:none!important}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin-bottom:12px}.field label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}.field input,.field select{width:100%;background:#0b101c;color:#fff;border:1px solid var(--line);border-radius:11px;padding:12px;outline:none}.field input:focus,.field select:focus{border-color:var(--accent)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:20px;z-index:50}.modalbox{width:min(520px,100%);background:#101522;border:1px solid var(--line);border-radius:20px;padding:24px;max-height:90vh;overflow:auto}.modalhead{display:flex;justify-content:space-between;align-items:center}.x{background:transparent;color:#fff;border:0;font-size:25px}.msg{padding:10px 12px;border-radius:10px;background:#171e30;color:var(--muted);margin:10px 0}.msg.ok{color:#72f2d1}.msg.err{color:#ff93a8}
+.cart{position:fixed;right:18px;bottom:18px;z-index:30}.cart button{border:0;border-radius:999px;background:var(--accent);color:#fff;padding:14px 18px;font-weight:900;box-shadow:0 12px 35px #0008}.cartcount{background:#fff;color:#111;border-radius:99px;padding:2px 7px;margin-left:4px}
+.list{display:grid;gap:10px}.item{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:14px;background:#0c111d;border:1px solid var(--line);border-radius:12px}.item small{color:var(--muted)}.status{padding:5px 8px;border-radius:999px;background:#20283b;color:#b9c4db;font-size:12px}
+footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);margin-top:50px}
+.notice{font-size:13px;color:var(--muted);line-height:1.5}.total{display:flex;justify-content:space-between;font-size:20px;font-weight:900;padding-top:14px;border-top:1px solid var(--line);margin-top:14px}
+@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}.navlinks a{display:none}.row{grid-template-columns:1fr}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.hero{padding-top:55px}.section-head{display:block}.filters{margin-top:15px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav">
+  <div class="logo">BOOST<span>ZONE</span><small>.gg</small></div>
+  <div class="navlinks"><a href="#services">Services</a><a href="#account">Account</a><button class="btn alt" onclick="openAuth()">Login / Registrierung</button></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="badge">BOOSTZONE.GG</span>
+  <h1>Level up.<br><span class="gradient">Play smarter.</span></h1>
+  <p>Gaming-Services für Valorant und Rocket League. Wähle ein Angebot, lege es in den Warenkorb und verwalte deine Bestellungen zentral in deinem Account.</p>
+  <div class="hero-actions"><a class="btn" href="#services">Services ansehen</a><button class="btn alt" onclick="openAuth()">Mein Account</button></div>
+</div></header>
+
+<main>
+<section id="services"><div class="wrap">
+  <div class="section-head"><div><h2>Services</h2><p>Wähle dein Spiel und deinen Service.</p></div><div class="filters">
+    <button class="filter active" data-game="all">Alle</button><button class="filter" data-game="Valorant">Valorant</button><button class="filter" data-game="Rocket League">Rocket League</button>
+  </div></div>
+  <div id="products" class="grid"></div>
+</div></section>
+
+<section id="account"><div class="wrap">
+  <div class="section-head"><div><h2>Account</h2><p id="accountSub">Noch nicht eingeloggt.</p></div></div>
+  <div id="accountPanel" class="panel">
+    <div id="loggedOut"><button class="btn" onclick="openAuth()">Login / Registrierung</button></div>
+    <div id="loggedIn" class="hidden">
+      <div class="row">
+        <div><b id="userName">—</b><div class="notice" id="userEmail">—</div></div>
+        <div style="text-align:right"><button class="btn alt" onclick="logout()">Logout</button></div>
+      </div>
+      <h3>Meine Bestellungen</h3><div id="orders" class="list"></div>
+    </div>
+  </div>
+  <div id="developerPanel" class="panel hidden">
+    <h2>Developer Panel</h2>
+    <div class="row"><div class="card"><small>Bestellungen</small><h2 id="statOrders">0</h2></div><div class="card"><small>Umsatz</small><h2 id="statRevenue">0,00 €</h2></div></div>
+    <h3>Bestellungen</h3><div id="devOrders" class="list"></div>
+    <h3>Benutzer</h3><div id="devUsers" class="list"></div>
+  </div>
+</div></section>
+</main>
+
+<div class="cart"><button onclick="openCart()">🛒 Warenkorb <span id="cartCount" class="cartcount">0</span></button></div>
+
+<footer><div class="wrap"><b>BoostZone.gg</b><br><span class="notice">Demo-/Frontend-Stand. Für echte Konten, E-Mail-Verifizierung und PayPal muss diese Seite mit dem zugehörigen Backend verbunden werden. Prüfe vor dem Live-Betrieb außerdem die Regeln des jeweiligen Spiels/Anbieters.</span></div></footer>
+
+<div id="modal" class="modal hidden"><div class="modalbox">
+  <div class="modalhead"><h2 id="modalTitle">Login</h2><button class="x" onclick="closeModal()">×</button></div>
+  <div id="modalBody"></div>
+</div></div>
+
 <script>
-const P=[{id:'v1',g:'Valorant',n:'Valorant Coaching',d:'Individuelles Coaching und Gameplay-Analyse.',p:19.99},{id:'r1',g:'Rocket League',n:'Rocket League Coaching',d:'Individuelles Coaching und Gameplay-Analyse.',p:19.99},{id:'v2',g:'Valorant',n:'Valorant Premium Coaching',d:'Intensiver Coaching-Termin mit persönlicher Analyse.',p:29.99},{id:'r2',g:'Rocket League',n:'Rocket League Premium Coaching',d:'Intensiver Coaching-Termin mit persönlicher Analyse.',p:29.99},{id:'g1',g:'Gaming',n:'1:1 Gaming Session',d:'Persönliche Gaming-Session mit einem Coach.',p:24.99},{id:'g2',g:'Gaming',n:'Gameplay Analyse',d:'Analyse mit konkreten Verbesserungstipps.',p:14.99}];
-let cart=JSON.parse(localStorage.bzCart||'[]'),users=JSON.parse(localStorage.bzUsers||'[]'),me=JSON.parse(localStorage.bzMe||'null'),orders=JSON.parse(localStorage.bzOrders||'[]'),mode='login';
-const eur=n=>n.toLocaleString('de-DE',{style:'currency',currency:'EUR'}),save=()=>{localStorage.bzCart=JSON.stringify(cart);localStorage.bzUsers=JSON.stringify(users);localStorage.bzMe=JSON.stringify(me);localStorage.bzOrders=JSON.stringify(orders);ui()},getP=id=>P.find(x=>x.id===id),sum=()=>cart.reduce((s,x)=>s+(getP(x.id)?.p||0)*x.q,0);
-function toast(t){let x=document.getElementById('toast');x.textContent=t;x.className='toast show';setTimeout(()=>x.className='toast',2500)}
-function render(filter='Alle'){document.getElementById('products').innerHTML=P.filter(x=>filter==='Alle'||x.g===filter).map(x=>`<div class="product"><span class="tag">${x.g.toUpperCase()}</span><h3>${x.n}</h3><p>${x.d}</p><div class="price">${eur(x.p)}</div><button class="btn primary" onclick="add('${x.id}')">In den Warenkorb</button></div>`).join('')}
-function filter(g){render(g);document.getElementById('angebote').scrollIntoView({behavior:'smooth'})}
-function add(id){let x=cart.find(x=>x.id===id);x?x.q++:cart.push({id,q:1});save();toast('Zum Warenkorb hinzugefügt.')}
-function cartOpen(){cartRender();document.getElementById('cartModal').classList.add('show')}
-function cartRender(){let e=document.getElementById('cartItems');if(!cart.length){e.innerHTML='<div class="empty">Warenkorb ist leer.</div>';document.getElementById('cartBottom').innerHTML='';return}e.innerHTML=cart.map(x=>{let p=getP(x.id);return `<div class="cartitem"><div><b>${p.n}</b><br><span class="small">${eur(p.p)} · Menge ${x.q}</span></div><div><button class="btn secondary" onclick="qty('${x.id}',-1)">−</button><button class="btn secondary" onclick="qty('${x.id}',1)">+</button><button class="btn danger" onclick="del('${x.id}')">×</button></div></div>`}).join('');document.getElementById('cartBottom').innerHTML=`<div class="total"><span>Gesamt</span><span>${eur(sum())}</span></div><button class="btn primary" style="width:100%" onclick="checkoutStart()">Zum Checkout</button>`}
-function qty(id,d){let x=cart.find(x=>x.id===id);x.q+=d;if(x.q<=0)cart=cart.filter(y=>y.id!==id);save();cartRender()}
-function del(id){cart=cart.filter(x=>x.id!==id);save();cartRender()}
-function auth(m){mode=m;document.getElementById('authTitle').textContent=m==='login'?'Anmelden':'Konto erstellen';document.getElementById('authSubmit').textContent=m==='login'?'Anmelden':'Registrieren';document.getElementById('switchText').textContent=m==='login'?'Noch kein Konto?':'Bereits registriert?';document.querySelector('#authModal .link').textContent=m==='login'?'Registrieren':'Anmelden';document.getElementById('authMsg').textContent='';document.getElementById('authModal').classList.add('show')}
-function toggleAuth(){auth(mode==='login'?'register':'login')}
-function submitAuth(e){e.preventDefault();let email=document.getElementById('email').value.trim().toLowerCase(),pass=document.getElementById('pass').value,msg=document.getElementById('authMsg');if(mode==='register'){if(users.some(x=>x.email===email)){msg.textContent='Diese E-Mail ist bereits registriert.';return}users.push({email,pass});me={email};save();closeM('authModal');toast('Konto erstellt und angemeldet.')}else{if(!users.some(x=>x.email===email&&x.pass===pass)){msg.textContent='E-Mail oder Passwort ist falsch.';return}me={email};save();closeM('authModal');toast('Erfolgreich angemeldet.')}}
-function checkoutStart(){if(!cart.length)return;if(!me){closeM('cartModal');auth('login');toast('Bitte zuerst anmelden.');return}closeM('cartModal');document.getElementById('shop').classList.add('hidden');document.querySelector('footer').classList.add('hidden');document.getElementById('checkout').classList.remove('hidden');document.getElementById('summary').innerHTML=cart.map(x=>{let p=getP(x.id);return `<div class="cartitem"><span>${p.n} × ${x.q}</span><b>${eur(p.p*x.q)}</b></div>`}).join('');document.getElementById('total').textContent=eur(sum());scrollTo(0,0)}
-function finish(){let id='BZ-'+Math.random().toString(36).slice(2,8).toUpperCase();orders.unshift({id,email:me.email,total:sum(),date:new Date().toISOString(),status:'Bestätigt (Demo)'});cart=[];save();document.getElementById('checkout').classList.add('hidden');document.querySelector('footer').classList.remove('hidden');toast('Bestellung '+id+' wurde erstellt.');account()}
-function account(){if(!me){auth('login');return}document.getElementById('shop').classList.add('hidden');document.querySelector('footer').classList.add('hidden');document.getElementById('account').classList.remove('hidden');document.getElementById('accountEmail').textContent=me.email;let mine=orders.filter(x=>x.email===me.email);document.getElementById('orders').innerHTML=mine.length?mine.map(x=>`<div class="order"><div class="orderhead"><b>${x.id}</b><span class="status">${x.status}</span></div><div class="small" style="margin:8px 0">${new Date(x.date).toLocaleString('de-DE')}</div><b>${eur(x.total)}</b></div>`).join(''):'<div class="empty">Noch keine Bestellungen.</div>';scrollTo(0,0)}
-function logout(){me=null;save();home();toast('Abgemeldet.')}
-function home(){document.getElementById('shop').classList.remove('hidden');document.getElementById('checkout').classList.add('hidden');document.getElementById('account').classList.add('hidden');document.querySelector('footer').classList.remove('hidden');scrollTo(0,0)}
-function closeM(id){document.getElementById(id).classList.remove('show')}
-function ui(){document.getElementById('count').textContent=cart.reduce((s,x)=>s+x.q,0);document.getElementById('loginButton').classList.toggle('hidden',!!me);document.getElementById('accountButton').classList.toggle('hidden',!me)}
-render();ui();
-</script></body></html>
+const API = ""; // Bei gleicher Domain leer lassen. Sonst z.B. "https://api.boostzone.gg"
+let products=[
+ {id:"v1",game:"Valorant",name:"Valorant Coaching",desc:"Individuelles Coaching und Analyse.",price:19.99},
+ {id:"v2",game:"Valorant",name:"Valorant Rank Service",desc:"Rank-Service nach deiner Auswahl.",price:39.99},
+ {id:"r1",game:"Rocket League",name:"Rocket League Coaching",desc:"Mechanics, Rotation und Replay-Analyse.",price:19.99},
+ {id:"r2",game:"Rocket League",name:"Rocket League Rank Service",desc:"Rank-Service nach deiner Auswahl.",price:34.99}
+];
+let cart=JSON.parse(localStorage.getItem("bz_cart")||"[]");
+let user=JSON.parse(localStorage.getItem("bz_user")||"null");
+let filter="all";
+
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));}
+function money(n){return new Intl.NumberFormat("de-DE",{style:"currency",currency:"EUR"}).format(n);}
+function saveCart(){localStorage.setItem("bz_cart",JSON.stringify(cart));renderCartCount();}
+function renderProducts(){
+ const box=document.getElementById("products");
+ box.innerHTML=products.filter(p=>filter==="all"||p.game===filter).map(p=>`
+ <article class="card"><span class="badge">${esc(p.game)}</span><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p><div class="price">${money(p.price)}</div>
+ <div class="card-actions"><button class="btn" onclick="addCart('${p.id}')">In den Warenkorb</button></div></article>`).join("");
+}
+function addCart(id){let p=products.find(x=>x.id===id);if(!p)return;let x=cart.find(x=>x.id===id);x?x.qty++:cart.push({id,qty:1});saveCart();openCart();}
+function renderCartCount(){document.getElementById("cartCount").textContent=cart.reduce((a,x)=>a+x.qty,0);}
+function openCart(){
+ let rows=cart.map(x=>{let p=products.find(p=>p.id===x.id);return p?`<div class="item"><div><b>${esc(p.name)}</b><br><small>${money(p.price)} × ${x.qty}</small></div><div><button class="btn alt" onclick="changeQty('${p.id}',-1)">−</button> <button class="btn alt" onclick="changeQty('${p.id}',1)">+</button></div></div>`:"";}).join("");
+ let total=cart.reduce((s,x)=>{let p=products.find(p=>p.id===x.id);return s+(p?p.price*x.qty:0)},0);
+ showModal("Warenkorb",`${rows||'<p class="notice">Dein Warenkorb ist leer.</p>'}<div class="total"><span>Gesamt</span><span>${money(total)}</span></div>${cart.length?'<button class="btn" style="width:100%;margin-top:14px" onclick="checkout()">Zur Kasse</button>':''}`);
+}
+function changeQty(id,d){let x=cart.find(x=>x.id===id);if(!x)return;x.qty+=d;if(x.qty<=0)cart=cart.filter(y=>y!==x);saveCart();openCart();}
+function openAuth(){showModal("Login / Registrierung",`
+ <div class="field"><label>E-Mail</label><input id="authEmail" type="email" autocomplete="email"></div>
+ <div class="field"><label>Passwort</label><input id="authPassword" type="password" autocomplete="current-password"></div>
+ <div id="authMsg"></div>
+ <div style="display:flex;gap:8px"><button class="btn" onclick="login()">Login</button><button class="btn alt" onclick="register()">Registrieren</button></div>
+ <p class="notice">Bei aktivierter E-Mail-Verifizierung bekommst du nach der Registrierung einen Code per E-Mail.</p>`);
+}
+async function api(path,opts={}){let r=await fetch(API+path,{headers:{"Content-Type":"application/json",...(opts.headers||{})},credentials:"include",...opts});let data={};try{data=await r.json()}catch{};if(!r.ok)throw new Error(data.error||"Anfrage fehlgeschlagen");return data;}
+function authMsg(t,ok=false){let e=document.getElementById("authMsg");if(e)e.innerHTML=`<div class="msg ${ok?"ok":"err"}">${esc(t)}</div>`;}
+async function register(){
+ try{let email=document.getElementById("authEmail").value.trim(),password=document.getElementById("authPassword").value;
+ let d=await api("/api/register",{method:"POST",body:JSON.stringify({email,password})});
+ authMsg(d.message||"Registrierung erfolgreich.",true);
+ setTimeout(()=>showVerify(email),400);
+ }catch(e){authMsg(e.message)}
+}
+function showVerify(email){showModal("E-Mail verifizieren",`<p class="notice">Wir haben einen 6-stelligen Code an <b>${esc(email)}</b> gesendet.</p>
+ <div class="field"><label>Verifizierungscode</label><input id="verifyCode" inputmode="numeric" maxlength="6"></div><div id="verifyMsg"></div>
+ <button class="btn" onclick="verify('${encodeURIComponent(email)}')">E-Mail bestätigen</button>
+ <button class="btn alt" onclick="resend('${encodeURIComponent(email)}')">Code erneut senden</button>`);}
+async function verify(email){try{let d=await api("/api/verify-email",{method:"POST",body:JSON.stringify({email:decodeURIComponent(email),code:document.getElementById("verifyCode").value.trim()})});document.getElementById("verifyMsg").innerHTML=`<div class="msg ok">${esc(d.message||"Bestätigt.")}</div>`;setTimeout(openAuth,700)}catch(e){document.getElementById("verifyMsg").innerHTML=`<div class="msg err">${esc(e.message)}</div>`}}
+async function resend(email){try{let d=await api("/api/resend-code",{method:"POST",body:JSON.stringify({email:decodeURIComponent(email)})});document.getElementById("verifyMsg").innerHTML=`<div class="msg ok">${esc(d.message||"Code gesendet.")}</div>`}catch(e){document.getElementById("verifyMsg").innerHTML=`<div class="msg err">${esc(e.message)}</div>`}}
+async function login(){try{let email=document.getElementById("authEmail").value.trim(),password=document.getElementById("authPassword").value;let d=await api("/api/login",{method:"POST",body:JSON.stringify({email,password})});user=d.user;localStorage.setItem("bz_user",JSON.stringify(user));closeModal();renderAccount();}catch(e){authMsg(e.message);if(/verifiz/i.test(e.message))setTimeout(()=>showVerify(document.getElementById("authEmail").value.trim()),500)}}
+async function logout(){try{await api("/api/logout",{method:"POST"})}catch{}user=null;localStorage.removeItem("bz_user");renderAccount();}
+async function checkout(){
+ if(!cart.length)return;
+ if(!user){closeModal();openAuth();return}
+ let items=cart.map(x=>({productId:x.id,quantity:x.qty}));
+ try{let d=await api("/api/orders",{method:"POST",body:JSON.stringify({items})});cart=[];saveCart();closeModal();renderAccount();alert(d.message||"Bestellung erstellt.");}
+ catch(e){alert(e.message)}
+}
+async function renderAccount(){
+ let out=document.getElementById("loggedOut"),inbox=document.getElementById("loggedIn");
+ if(!user){out.classList.remove("hidden");inbox.classList.add("hidden");document.getElementById("accountSub").textContent="Noch nicht eingeloggt.";document.getElementById("developerPanel").classList.add("hidden");return}
+ out.classList.add("hidden");inbox.classList.remove("hidden");document.getElementById("accountSub").textContent="Eingeloggt";document.getElementById("userEmail").textContent=user.email||"";document.getElementById("userName").textContent=user.role==="developer"?"Developer":(user.email||"Konto");
+ try{let d=await api("/api/orders");document.getElementById("orders").innerHTML=(d.orders||[]).map(o=>`<div class="item"><div><b>Bestellung #${esc(o.id)}</b><br><small>${esc(o.created_at||"")}</small></div><span class="status">${esc(o.status||"offen")}</span></div>`).join("")||'<p class="notice">Noch keine Bestellungen.</p>'}catch(e){document.getElementById("orders").innerHTML=`<p class="notice">${esc(e.message)}</p>`}
+ if(user.role==="developer")renderDeveloper();
+}
+async function renderDeveloper(){
+ document.getElementById("developerPanel").classList.remove("hidden");
+ try{let s=await api("/api/developer/stats");document.getElementById("statOrders").textContent=s.orders??0;document.getElementById("statRevenue").textContent=money(Number(s.revenue||0))}catch{}
+ try{let d=await api("/api/developer/orders");document.getElementById("devOrders").innerHTML=(d.orders||[]).map(o=>`<div class="item"><div><b>#${esc(o.id)}</b><br><small>${esc(o.email||"")} · ${money(Number(o.total||0))}</small></div><span class="status">${esc(o.status||"offen")}</span></div>`).join("")||'<p class="notice">Keine Bestellungen.</p>'}catch(e){document.getElementById("devOrders").innerHTML=`<p class="notice">${esc(e.message)}</p>`}
+ try{let d=await api("/api/developer/users");document.getElementById("devUsers").innerHTML=(d.users||[]).map(u=>`<div class="item"><div><b>${esc(u.email)}</b><br><small>${esc(u.role||"customer")} · verifiziert: ${u.verified?"ja":"nein"}</small></div></div>`).join("")||'<p class="notice">Keine Benutzer.</p>'}catch(e){document.getElementById("devUsers").innerHTML=`<p class="notice">${esc(e.message)}</p>`}
+}
+function showModal(title,body){document.getElementById("modalTitle").textContent=title;document.getElementById("modalBody").innerHTML=body;document.getElementById("modal").classList.remove("hidden")}
+function closeModal(){document.getElementById("modal").classList.add("hidden")}
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");filter=b.dataset.game;renderProducts()}));
+renderProducts();renderCartCount();renderAccount();
+</script>
+</body>
+</html>
