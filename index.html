@@ -14,13 +14,11 @@ nav{height:72px;display:flex;align-items:center;justify-content:space-between;ga
 .hero{padding:92px 0 65px}.heroGrid{display:grid;grid-template-columns:1.3fr .7fr;gap:20px}.heroCard,.card,.game,.product,.feature{background:linear-gradient(145deg,rgba(16,22,37,.98),rgba(10,14,24,.98));border:1px solid var(--line);border-radius:22px}.heroCard{padding:44px}.eyebrow,.tag{color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:1.3px}.hero h1{font-size:clamp(48px,7vw,82px);line-height:.93;margin:15px 0;letter-spacing:-4px}.grad{background:linear-gradient(90deg,#ac8dff,#64a5ff);color:transparent;background-clip:text}.hero p{max-width:690px;color:var(--muted);font-size:18px;line-height:1.65}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.heroSide{padding:25px;display:flex;flex-direction:column;justify-content:center}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:var(--panel2);border:1px solid var(--line);border-radius:15px;padding:16px}.stat b{font-size:23px}.stat span{display:block;color:var(--muted);font-size:11px;margin-top:4px}.note{margin-top:14px;padding:15px;border-radius:14px;background:#131b2b;border:1px solid var(--line);color:var(--muted);line-height:1.5;font-size:13px}
 section{padding:60px 0}.title{text-align:center;margin-bottom:30px}.title h2{font-size:37px;margin:0 0 8px}.title p{color:var(--muted)}.games{display:grid;grid-template-columns:1fr 1fr;gap:18px}.game{padding:27px;min-height:180px}.game h3{font-size:29px;margin:0 0 8px}.game p{color:var(--muted);line-height:1.55}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.product{padding:21px;transition:.18s}.product:hover{transform:translateY(-3px);border-color:#6d5bd0}.product h3{margin:10px 0 7px}.product p{color:var(--muted);line-height:1.55;min-height:67px}.price{font-size:25px;font-weight:950;margin:16px 0}.product .btn{width:100%}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{padding:23px}.feature b{display:block;margin:8px 0}.feature p{color:var(--muted);line-height:1.55}
 .filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:25px}
-.serviceModal,.modal,.drawer{display:none;position:fixed;inset:0;background:#000c;z-index:80}.serviceModal.show,.modal.show,.drawer.show{display:flex}.serviceModal{align-items:center;justify-content:center;padding:18px}.serviceBox{width:min(650px,100%);max-height:92vh;overflow:auto;background:#0f1625;border:1px solid #303b56;border-radius:20px;padding:25px;box-shadow:0 25px 90px #0009}.serviceHead,.head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px}.close{border:0;background:none;color:white;font-size:28px}.explain{background:#141d2f;border:1px solid #2c3954;border-radius:13px;padding:15px;margin:16px 0;color:#bdc7d9;line-height:1.6}.rankgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.rankbox label,.field label{display:block;color:#cbd3e3;font-size:13px;margin-bottom:6px}.rankbox select,.field input{width:100%;padding:12px;border-radius:10px;border:1px solid #35415c;background:#080e18;color:#fff}.quote{display:flex;justify-content:space-between;align-items:center;margin-top:17px;padding:16px;background:#151e31;border:1px solid #34415e;border-radius:13px}.quote strong{font-size:26px}.small{color:var(--muted);font-size:13px}.pill{display:inline-block;color:#bcaaff;border:1px solid #7c5cff55;background:#7c5cff18;border-radius:99px;padding:6px 10px;font-size:11px;font-weight:850}
-.modal{align-items:center;justify-content:center;padding:20px}.box{width:min(450px,100%);padding:26px;background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 70px #0008}.field{margin:13px 0}.msg{color:#ff9aaa;font-size:13px;min-height:18px}.switch{text-align:center;color:var(--muted);font-size:13px;margin-top:13px}.link{border:0;background:none;color:#b9a5ff}
-.drawer{justify-content:flex-end}.drawerbox{height:100%;width:min(490px,100%);background:#0d1320;border-left:1px solid var(--line);padding:24px;overflow:auto}.cartitem{display:flex;justify-content:space-between;gap:10px;padding:15px 0;border-bottom:1px solid var(--line)}.total{display:flex;justify-content:space-between;font-size:23px;font-weight:900;margin:22px 0}.empty{text-align:center;color:var(--muted);padding:45px 0}
+.serviceModal,.modal,
 .page{max-width:850px;margin:55px auto}.order{padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:10px 0}.orderhead{display:flex;justify-content:space-between}.status{font-size:11px;padding:5px 8px;border-radius:99px;background:#17283b;color:#b9c8df}
-.checkoutGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.paybox{background:#111b31;border:1px solid #3854a0;border-radius:16px;padding:20px}.paypal{font-size:22px;font-weight:950;color:#67a9ff}
+
 footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between}.toast{display:none;position:fixed;right:18px;bottom:18px;z-index:100;background:#172238;border:1px solid #3c4d70;padding:14px 17px;border-radius:10px}.toast.show{display:block}
-@media(max-width:850px){.heroGrid,.checkoutGrid{grid-template-columns:1fr}.products,.features{grid-template-columns:1fr 1fr}.links button:nth-child(3){display:none}}
+@media(max-width:850px){.heroGrid{grid-template-columns:1fr}.products,.features{grid-template-columns:1fr 1fr}.links button:nth-child(3){display:none}}
 @media(max-width:600px){.wrap{padding:0 14px}.hero{padding-top:65px}.heroCard{padding:28px}.hero h1{letter-spacing:-2px}.games,.products,.features,.rankgrid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.foot{flex-direction:column;gap:8px}.links{display:none}}
 </style>
 </head>
@@ -30,12 +28,8 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-s
   <div class="links">
     <button data-nav="home" class="active">Start</button>
     <button data-nav="offers">Angebote</button>
-    <button data-nav="account">Konto</button>
   </div>
   <div style="display:flex;gap:7px">
-    <button class="btn" onclick="cartOpen()">🛒 <span id="count">0</span></button>
-    <button id="loginBtn" class="btn" onclick="auth('login')">Anmelden</button>
-    <button id="accountBtn" class="btn primary hidden" onclick="account()">Konto</button>
   </div>
 </nav></header>
 
@@ -44,7 +38,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-s
   <div class="heroCard">
     <div class="eyebrow">GAMING SERVICES • BOOSTING • COACHING • ANALYSE</div>
     <h1>Level up.<br><span class="grad">Dein Game.</span></h1>
-    <p>Wähle Valorant oder Rocket League, öffne einen Service und stelle deinen Auftrag Schritt für Schritt zusammen.</p>
+    <p>Wähle deinen Service und werde direkt zu unserem Discord weitergeleitet, um deinen Auftrag dort zu besprechen.</p>
     <div class="actions">
       <button class="btn primary" onclick="openBoost('Valorant')">Valorant Boosting</button>
       <button class="btn" onclick="openBoost('Rocket League')">Rocket League Boosting</button>
@@ -57,7 +51,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-s
       <div class="stat"><b>29,99 €</b><span>Premium</span></div>
       <div class="stat"><b>14,99 €</b><span>Analyse</span></div>
     </div>
-    <div class="note"><span class="pill">PAYPAL</span><br><br>Die Oberfläche ist für den späteren sicheren PayPal-Checkout vorbereitet. In reinem HTML bleibt die Zahlung eine Demo.</div>
+    <div class="note"><span class="pill">DISCORD</span><br><br>Kein Online-Kauf auf der Website. Nach der Auswahl wirst du direkt zu unserem Discord weitergeleitet.</div>
   </div>
 </div></section>
 
@@ -84,51 +78,44 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-s
   <div class="title"><h2>Warum BoostZone?</h2><p>Ein klarer Ablauf ohne unnötige Schritte.</p></div>
   <div class="features">
     <div class="feature">⚡<b>Schnell auswählen</b><p>Spiel, Service und – beim Boosting – Start- und Zielrang auswählen.</p></div>
-    <div class="feature">🧾<b>Preis vorher sehen</b><p>Der Preis wird vor dem Hinzufügen zum Warenkorb angezeigt.</p></div>
-    <div class="feature">🔒<b>Konto & Bestellungen</b><p>Demo-Konto und Bestellübersicht sind bereits eingebaut.</p></div>
+    <div class="feature">💬<b>Direkt auf Discord</b><p>Nach der Auswahl wirst du direkt zu unserem Discord weitergeleitet.</p></div>
+    <div class="feature">🤝<b>Persönlicher Kontakt</b><p>Besprich deinen Auftrag direkt mit uns auf Discord.</p></div>
   </div>
 </div></section>
 </main>
-
-<div id="checkout" class="hidden"><div class="wrap page">
-  <div class="title"><h2>Checkout</h2><p>Überprüfe deine Bestellung.</p></div>
-  <div class="checkoutGrid">
-    <div class="box"><h3>Kundendaten</h3>
-      <div class="field"><label>E-Mail</label><input id="checkoutEmail" type="email" placeholder="name@example.com"></div>
-      <div class="field"><label>Ingame-Name / Kontakt</label><input id="checkoutContact" placeholder="Riot / Epic / Discord"></div>
-    </div>
-    <div class="box"><h3>Zahlung</h3><div class="paybox"><div class="paypal">PayPal</div><p class="small">Demo-Zahlung. Für echte Zahlungen muss PayPal serverseitig angebunden werden.</p><button class="btn primary" style="width:100%" onclick="finish()">Zahlung starten</button></div><div class="total"><span>Gesamt</span><span id="checkoutTotal">0,00 €</span></div></div>
-  </div>
+</div>
   <button class="btn" style="margin-top:15px" onclick="home()">Zurück zum Shop</button>
 </div></div>
-
-<div id="account" class="hidden"><div class="wrap page">
-  <div class="title"><h2>Mein Konto</h2><p id="accountEmail"></p></div>
-  <button class="btn" onclick="home()">Shop</button> <button class="btn" onclick="logout()">Abmelden</button>
-  <h3 style="margin-top:30px">Meine Bestellungen</h3><div id="orders"></div>
-</div></div>
-
 <div id="serviceModal" class="serviceModal" onclick="if(event.target===this)serviceClose()"><div class="serviceBox">
   <div class="serviceHead"><div><h2 id="serviceTitle"></h2><div id="serviceTag" class="small"></div></div><button class="close" onclick="serviceClose()">×</button></div>
   <div id="serviceExplain" class="explain"></div><div id="serviceOptions"></div>
 </div></div>
-
-<div id="authModal" class="modal"><div class="box">
-  <div class="head"><h2 id="authTitle">Anmelden</h2><button class="close" onclick="closeM('authModal')">×</button></div>
-  <div id="authMsg" class="msg"></div>
-  <form onsubmit="submitAuth(event)"><div class="field"><label>E-Mail</label><input id="email" type="email" required></div><div class="field"><label>Passwort</label><input id="pass" type="password" minlength="6" required></div><button id="authSubmit" class="btn primary" style="width:100%">Anmelden</button></form>
-  <div class="switch"><span id="switchText">Noch kein Konto?</span> <button type="button" class="link" onclick="toggleAuth()">Registrieren</button></div>
-</div></div>
-
-<div id="cartModal" class="drawer" onclick="if(event.target===this)closeM('cartModal')"><div class="drawerbox">
-  <div class="head"><h2>Warenkorb</h2><button class="close" onclick="closeM('cartModal')">×</button></div><div id="cartItems"></div><div id="cartBottom"></div>
-</div></div>
-
-<footer><div class="wrap foot"><span>© 2026 BoostZone.gg · JR6</span><span>Impressum · Datenschutz · AGB</span></div></footer>
+<footer><div class="wrap foot"><span>© 2026 BoostZone.gg · JR6</span><a href="https://discord.com/invite/4DTwA2gc9Z" target="_blank" rel="noopener noreferrer" style="color:inherit">Discord · Kontakt</a></div></footer>
 <div id="toast" class="toast"></div>
 
 <script>
-const PRODUCTS=[
+const DISCORD_URL='https://discord.com/invite/4DTwA2gc9Z';
+function goDiscord(){
+  window.location.href=DISCORD_URL;
+}
+function goDiscordWithService(id){
+  const p=getP(id);
+  if(!p)return goDiscord();
+  if(p.type==='Boosting'){
+    const from=document.getElementById('fromRank');
+    const to=document.getElementById('toRank');
+    const fromName=from?.selectedOptions[0]?.text||'';
+    const toName=to?.selectedOptions[0]?.text||'';
+    if(!to || +to.value<=+(from?.value||0)){
+      return toast('Bitte einen gültigen Zielrang auswählen.');
+    }
+    const url=DISCORD_URL;
+    window.location.href=url;
+    return;
+  }
+  window.location.href=DISCORD_URL;
+}
+const PRODUCTS=
 {id:'vboost',g:'Valorant',type:'Boosting',n:'Valorant Rank Boosting',d:'Start- und Zielrang wählen; der Preis wird automatisch berechnet.',p:0,details:'Du bezahlst für den ausgewählten Rang-Fortschritt.'},
 {id:'vcoach',g:'Valorant',type:'Coaching',n:'Valorant Coaching',d:'1:1 Coaching mit Gameplay-Analyse und konkreten Verbesserungstipps.',p:19.99,details:'19,99 € pro Coaching-Session.'},
 {id:'vpremium',g:'Valorant',type:'Coaching',n:'Valorant Premium Coaching',d:'Intensivere persönliche Session mit ausführlicher Analyse.',p:29.99,details:'29,99 € pro Premium-Coaching-Session.'},
@@ -143,12 +130,10 @@ Valorant:['Iron 1','Iron 2','Iron 3','Bronze 1','Bronze 2','Bronze 3','Silver 1'
 'Rocket League':['Bronze 1','Bronze 2','Bronze 3','Silver 1','Silver 2','Silver 3','Gold 1','Gold 2','Gold 3','Platinum 1','Platinum 2','Platinum 3','Diamond 1','Diamond 2','Diamond 3','Champion 1','Champion 2','Champion 3','Grand Champion 1','Grand Champion 2','Grand Champion 3','Supersonic Legend']
 };
 
-let cart=JSON.parse(localStorage.bzCart||'[]'),users=JSON.parse(localStorage.bzUsers||'[]'),me=JSON.parse(localStorage.bzMe||'null'),orders=JSON.parse(localStorage.bzOrders||'[]'),mode='login';
+let mode='login';
 const eur=n=>Number(n).toLocaleString('de-DE',{style:'currency',currency:'EUR'});
 const getP=id=>PRODUCTS.find(x=>x.id===id);
 const price=x=>x.price!=null?Number(x.price):Number(getP(x.id)?.p||0);
-const save=()=>{localStorage.bzCart=JSON.stringify(cart);localStorage.bzUsers=JSON.stringify(users);localStorage.bzMe=JSON.stringify(me);localStorage.bzOrders=JSON.stringify(orders);ui()};
-const sum=()=>cart.reduce((s,x)=>s+price(x)*x.q,0);
 
 function toast(t){const x=document.getElementById('toast');x.textContent=t;x.className='toast show';setTimeout(()=>x.className='toast',2400)}
 function render(filterName='Alle'){
@@ -171,12 +156,12 @@ function serviceOpen(id){
    <div class="rankbox"><label>Aktueller Rang</label><select id="fromRank" onchange="calcBoost('${id}')">${ranks.map((r,i)=>`<option value="${i}">${r}</option>`).join('')}</select></div>
    <div class="rankbox"><label>Zielrang</label><select id="toRank" onchange="calcBoost('${id}')">${ranks.map((r,i)=>`<option value="${i}">${r}</option>`).join('')}</select></div></div>
    <h3 style="margin-top:20px">2. Preis</h3><div id="quote" class="quote"></div>
-   <button id="boostAdd" class="btn primary" style="width:100%;margin-top:14px" onclick="addService('${id}')">Boost auswählen</button>`;
+   <button id="boostAdd" class="btn primary" style="width:100%;margin-top:14px" onclick="addService('${id}')">Auf Discord fortfahren</button>`;
    document.getElementById('fromRank').value=0;document.getElementById('toRank').value=1;calcBoost(id);
  }else{
    o.innerHTML=`<div class="explain"><b>Wofür bezahlst du?</b><br>${p.details}</div>
    <div class="quote"><div><b>${p.n}</b><br><span class="small">Einmaliger Preis</span></div><strong>${eur(p.p)}</strong></div>
-   <button class="btn primary" style="width:100%;margin-top:14px" onclick="addService('${id}')">Service auswählen · ${eur(p.p)}</button>`;
+   <button class="btn primary" style="width:100%;margin-top:14px" onclick="addService('${id}')">Auf Discord fortfahren</button>`;
  }
  document.getElementById('serviceModal').classList.add('show');
 }
@@ -197,13 +182,7 @@ function calcBoost(id){
  q.dataset.price=total;document.getElementById('boostAdd').disabled=false;
 }
 function addService(id){
- const p=getP(id);
- if(p.type==='Boosting'){
-   const from=+document.getElementById('fromRank').value,to=+document.getElementById('toRank').value,pr=Number(document.getElementById('quote').dataset.price||0);
-   if(pr<=0)return toast('Bitte einen gültigen Zielrang auswählen.');
-   const key=id+'-'+from+'-'+to;const x=cart.find(x=>x.key===key);x?x.q++:cart.push({id,q:1,key,from,to,price:pr});
- }else{const x=cart.find(x=>x.id===id);x?x.q++:cart.push({id,q:1})}
- save();serviceClose();toast('Service zum Warenkorb hinzugefügt.');
+  goDiscordWithService(id);
 }
 
 function cartOpen(){cartRender();document.getElementById('cartModal').classList.add('show')}
@@ -211,7 +190,7 @@ function cartRender(){
  const e=document.getElementById('cartItems');
  if(!cart.length){e.innerHTML='<div class="empty">Warenkorb ist leer.</div>';document.getElementById('cartBottom').innerHTML='';return}
  e.innerHTML=cart.map(x=>{const p=getP(x.id);let label=p.n;if(p.type==='Boosting'&&x.from!=null)label+=`<br><span class="small">${RANKS[p.g][x.from]} → ${RANKS[p.g][x.to]}</span>`;return `<div class="cartitem"><div><b>${label}</b><br><span class="small">${eur(price(x))} · Menge ${x.q}</span></div><div style="white-space:nowrap"><button class="btn" onclick="qty('${x.key||x.id}',-1)">−</button> <button class="btn" onclick="qty('${x.key||x.id}',1)">+</button> <button class="btn" onclick="del('${x.key||x.id}')">×</button></div></div>`}).join('');
- document.getElementById('cartBottom').innerHTML=`<div class="total"><span>Gesamt</span><span>${eur(sum())}</span></div><button class="btn primary" style="width:100%" onclick="checkoutStart()">Zum Checkout</button>`;
+ document.getElementById('cartBottom').innerHTML=`<div class="total"><span>Gesamt</span><span>${eur(sum())}</span></div><button class="btn primary" style="width:100%" onclick="goDiscord()">Zum Checkout</button>`;
 }
 function qty(key,d){const x=cart.find(x=>(x.key||x.id)===key);if(!x)return;x.q+=d;if(x.q<=0)cart=cart.filter(y=>(y.key||y.id)!==key);save();cartRender()}
 function del(key){cart=cart.filter(x=>(x.key||x.id)!==key);save();cartRender()}
@@ -224,8 +203,7 @@ function finish(){const contact=document.getElementById('checkoutContact').value
 function logout(){me=null;save();home();toast('Abgemeldet.')}
 function closeM(id){document.getElementById(id).classList.remove('show')}
 function ui(){document.getElementById('count').textContent=cart.reduce((s,x)=>s+x.q,0);document.getElementById('loginBtn').classList.toggle('hidden',!!me);document.getElementById('accountBtn').classList.toggle('hidden',!me)}
-document.querySelectorAll('[data-nav]').forEach(b=>b.onclick=()=>{if(b.dataset.nav==='account')account();else if(b.dataset.nav==='offers')scrollOffers();else home()});
-render();ui();
+render();
 </script>
 </body>
 </html>
